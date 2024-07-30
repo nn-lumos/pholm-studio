@@ -1,0 +1,12 @@
+streamlit
+langchain
+langchain-community
+langchain-huggingface
+python-dotenv
+google-generativeai
+langchain-google-genai
+sentence_transformers
+faiss-cpu
+pypdf
+docx2txt
+aiofiles
