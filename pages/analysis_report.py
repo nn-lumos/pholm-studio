@@ -3,9 +3,10 @@ import pandas as pd
 import subprocess
 from datetime import datetime
 import plotly.express as px
+import sys
 
 
-get_data = subprocess.Popen(['python', './utils/get_data.py'])
+get_data = subprocess.Popen([f'{sys.executable}', './utils/get_data.py'])
 
 
 dataframe = pd.read_csv('./db/data_usage.csv')
