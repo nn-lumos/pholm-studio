@@ -9,6 +9,12 @@ from utils.models import Model
 embedding = Model.embed_model()
 llm = Model.llm_model()
 
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 
 def main():
 
