@@ -16,7 +16,6 @@ feedback = pd.read_csv('./db/feedback.csv')
 now = datetime.now().strftime('%Y-%m-%d')
 
 st.set_page_config(page_title="Report", initial_sidebar_state="expanded")
-st.title("🍲 PhoLM Report")
 
 # 
 st.header("Analysis Report: PhoLM Studio")

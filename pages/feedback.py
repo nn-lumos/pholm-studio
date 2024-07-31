@@ -7,9 +7,6 @@ st.set_page_config(page_title="Feedback", page_icon="📝", initial_sidebar_stat
 st.title("🍲 PhoLM Feedback")
 
 
-st.subheader("Để lại phản hồi của bạn")
-
-
 rating = st.radio("Đánh giá:", [5, 4, 3, 2, 1], index=0, format_func=lambda x: f"{x} 🍲", horizontal=True)
 name = st.text_input("Tên:")
 email = st.text_input("Email:")
