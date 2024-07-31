@@ -10,3 +10,5 @@ faiss-cpu
 pypdf
 docx2txt
 aiofiles
+pandas
+numpy

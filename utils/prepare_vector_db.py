@@ -2,6 +2,7 @@ import os
 import tempfile
 
 from utils.models import Model
+from datetime import datetime
 
 from langchain.document_loaders import Docx2txtLoader, PyPDFLoader
 from utils.custom_loader import CustomDocumentLoader
@@ -10,7 +11,7 @@ from langchain_community.vectorstores import FAISS
 
 
 embedding =  Model.embed_model()
-
+date_update = datetime.now().strftime('%Y-%m-%d')
 
 def get_documents(upload_files):
 
@@ -76,4 +77,4 @@ def get_chunks(documents):
 def get_vector_store(chunks, session_id):
 
     vector_store = FAISS.from_documents(chunks, embedding=embedding)
-    vector_store.save_local(f'./db/faiss_index_{session_id}')
+    vector_store.save_local(f'./db/faiss_index_{date_update}_{session_id}')
