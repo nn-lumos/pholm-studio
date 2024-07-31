@@ -14,6 +14,9 @@ feedback = pd.read_csv('./db/feedback.csv')
 
 now = datetime.now().strftime('%Y-%m-%d')
 
+st.set_page_config(page_title="Report", initial_sidebar_state="expanded")
+st.title("🍲 PhoLM Report")
+
 # 
 st.header("Analysis Report: PhoLM Studio")
 st.write(f"Từ 21-07-2024 đến {datetime.now().strftime('%d-%m-%Y')}")

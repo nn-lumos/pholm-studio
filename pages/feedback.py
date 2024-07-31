@@ -3,18 +3,18 @@ import pandas as pd
 import os
 
 
-st.set_page_config(page_title="Product Feedback", page_icon="📝", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Feedback", page_icon="📝", initial_sidebar_state="expanded")
 st.title("🍲 PhoLM Feedback")
 
 
-st.subheader("Leave Your Feedback")
+st.subheader("Để lại phản hồi của bạn")
 
 
-rating = st.radio("Rating:", [5, 4, 3, 2, 1], index=0, format_func=lambda x: f"{x} 🍲", horizontal=True)
+rating = st.radio("Đánh giá:", [5, 4, 3, 2, 1], index=0, format_func=lambda x: f"{x} 🍲", horizontal=True)
 name = st.text_input("Tên:")
 email = st.text_input("Email:")
 comment = st.text_area("Feedback:")
-submit_button = st.button("Submit")
+submit_button = st.button("Gửi")
 
 
 csv_file = "./db/feedback.csv"
@@ -46,8 +46,8 @@ if submit_button:
     append_feedback_to_csv(feedback_data, csv_file)
 
     
-    st.success("Thank you for your feedback!")
+    st.success("Cảm ơn bạn feedback!")
 
     
-    st.write("### Feedback received:")
+    st.write("### Đã nhận Feedback:")
     st.dataframe(feedback_df)
