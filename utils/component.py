@@ -6,6 +6,8 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 
 import uuid
+from datetime import datetime
+date_update = datetime.now().strftime('%Y-%m-%d')
 
 embedding = Model.embed_model()
 llm = Model.llm_model()
@@ -41,7 +43,7 @@ def get_conversational_chain():
 
 def get_response(user_question, session_id):
 
-    db = FAISS.load_local(f"./db/faiss_index_{session_id}", embedding, allow_dangerous_deserialization=True)
+    db = FAISS.load_local(f"./db/faiss_index_{date_update}_{session_id}", embedding, allow_dangerous_deserialization=True)
     docs = db.similarity_search(user_question)
 
     chain = get_conversational_chain()
